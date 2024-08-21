@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;700&display=swap');
+
+body {
+    font-family: 'Raleway', sans-serif;
+    background-color: #000;
+    color: #fff;
+    margin: 0;
+    overflow: hidden;
+    
+}
+
+.hero-section {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.background-shape {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+   /* background: url('https://via.placeholder.com/1500x1000/000000/FFFFFF?text=Background+Shape') no-repeat center center;*/
+    background-size: contain;
+    opacity: 0.1;
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin-left: 10%;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: left;
+}
+
+.hero-content p {
+    font-size: 1rem;
+    font-weight: 300;
+    margin: 1.5rem 0;
+    text-align:left;
+    color: #aaa;
+}
+
+.hero-buttons {
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.hero-buttons .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 2rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.hero-buttons .btn-primary {
+    background-color:#1851ea;
+    color: #000;
+}
+
+.hero-buttons .btn-secondary {
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+}
+
+.hero-buttons .btn:hover {
+    transform: scale(1.05);
+}
+
+
+
+
+
+.menu {
+    position: absolute;
+    top: 1.5rem;
+    right: 2rem;
+    z-index: 3;
+}
+
+.menu .line {
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px 0;
+}
+
+.logo {
+    position: absolute;
+    top: 1.5rem;
+    left: 2rem;
+    font-size: 2rem;
+    font-weight: 700;
+    z-index: 3;
+}
+
+.sidebar-text {
+    position: absolute;
+    left: 20;
+    top: 50%;
+    transform: rotate(-90deg) translateX(-50%);
+    transform-origin: left center;
+    font-size: 0.75rem;
+    letter-spacing: 0.2rem;
+    z-index: 2;
+}
+.video-background {
+    position:fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+    
+}
+#bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1; /* Behind everything */
+    background-size: cover;
+    overflow: hidden;
+    object-fit: cover; /* Ensures the video covers the entire screen */
+}
