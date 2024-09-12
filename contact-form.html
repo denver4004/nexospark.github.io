@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="icon" type="image/png" href="images/white.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Nexospark provides cutting-edge drone solutions to empower businesses and individuals. Explore our innovative approach.">
+    <meta name="keywords" content="Nexospark, innovative solutions, drone, manufacturing">
+    <title>Nexospark | Innovative Drone Solutions</title>
+    
+    <!-- Open Graph for Social Media Sharing -->
+    <meta property="og:title" content="Nexospark | Innovative Drone Solutions">
+    <meta property="og:description" content="Discover Nexospark's innovative solutions in [your industry]. Helping businesses and individuals grow.">
+    <meta property="og:image" content="https://nexospark.in/images/social-share-image.jpg">
+    <meta property="og:url" content="https://nexospark.in">
+    <meta property="og:type" content="nexospark.in">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Nexospark | Innovative Drone Solutions">
+    <meta name="twitter:description" content="Nexospark provides top-notch solutions in drone.">
+    <meta name="twitter:image" content="https://nexospark.in/images/twitter-card-image.jpg">
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Nexospark for inquiries, support, or feedback.">
+    <title>Contact Us - Nexospark</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .map-container {
+            height: 400px;
+            width: 100%;
+            margin-top: 1rem;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100">
+
+    <!-- Header -->
+    <header class="flex justify-between items-center p-6 fixed w-full bg-white z-50 shadow-md">
+        <div class="text-2xl font-bold">Nexospark</div>
+        <nav class="space-x-6 text-sm font-medium">
+            <a href="index.html" class="text-gray-600 hover:text-black">Home</a>
+            <a href="index.html" class="text-gray-600 hover:text-black">About Us</a>
+            <a href="index.html" class="text-gray-600 hover:text-black">Services</a>
+            <a href="index.html" class="text-gray-600 hover:text-black">Products</a>
+            <a href="index.html" class="text-gray-600 hover:text-black">Contact Us</a>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="pt-20 pb-12 px-6">
+        <section class="container mx-auto bg-white p-8 rounded-lg shadow-lg">
+            <h1 class="text-3xl font-bold mb-6 text-center">Contact Us</h1>
+            <div class="flex flex-col md:flex-row md:space-x-8">
+                <!-- Contact Form -->
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <h2 class="text-2xl font-semibold mb-4">Get in Touch</h2>
+                    <form id="contact-form" class="space-y-4">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+                            <input type="text" id="name" name="name" required
+                                class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                            <input type="email" id="email" name="email" required
+                                class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
+                            <textarea id="message" name="message" rows="4" required
+                                class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"></textarea>
+                        </div>
+                        <button type="submit"
+                            class="bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+                            Send Message
+                        </button>
+                    </form>
+                    <p id="success-message" class="mt-4 text-green-600 hidden">Your message has been sent successfully!</p>
+                </div>
+                <!-- Contact Information -->
+                <div class="md:w-1/2">
+                    <h2 class="text-2xl font-semibold mb-4">Our Office</h2>
+                    <p class="text-lg text-gray-700 mb-4">
+                        Kottayam, Kerala , India-686634
+                    </p>
+                    <p class="text-lg text-gray-700 mb-4">
+                        <strong>Phone:</strong> <a href="tel:+1234567890" class="text-blue-600 hover:underline">+91 8078926635</a>
+                    </p>
+                    <p class="text-lg text-gray-700 mb-4">
+                        <strong>Email:</strong> <a href="mailto:info@nexospark.in" class="text-blue-600 hover:underline">info@nexospark.in</a>
+                    </p>
+                    <div class="map-container">
+                        <!-- Replace the src URL with the URL of your desired location on Google Maps -->
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15733.139321927392!2d76.5348124!3d9.6566861!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b07d52c8bf01f25%3A0xc28c562aa6249cff!2sNexospark%20Center%20For%20Innovation%20and%20Open%20Learning!5e0!3m2!1sen!2sin!4v1726100732186!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>"
+                            allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+       <!-- Footer -->
+       <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-5 gap-8 px-6">
+            <!-- First Column: Address and Contact -->
+            <div>
+                <h3 class="font-bold mb-4">Useful Links</h3>
+                <p> Kottayam, Kerala , India-686634</p>
+                <p class="mt-2">+91 8078926635</p>
+                <p class="mt-2"><a href="mailto:info@quadron.co" class="text-blue-400">info@nexospark.in</a></p>
+                <div class="flex space-x-4 mt-4">
+                    <a href="#" class="text-gray-300 hover:text-blue-400"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-gray-300 hover:text-blue-400"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-gray-300 hover:text-blue-400"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+    
+            <!-- Second Column: Useful Links -->
+            <div>
+                <h3 class="font-bold mb-4">Useful Links</h3>
+                <ul class="space-y-2">
+                    <li><a href="#" class="text-gray-400 hover:text-blue-400">Documents</a></li>
+                    <li><a href="#products" class="text-gray-400 hover:text-blue-400">Products</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-blue-400">Nexospark Shop</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-blue-400">Blog and News</a></li>
+                </ul>
+            </div>
+    
+            <!-- Third Column: Main Menu -->
+            <div>
+                <h3 class="font-bold mb-4">Main Menu</h3>
+                <ul class="space-y-2">
+                    <li><a href="#" class="text-gray-400 hover:text-blue-400">About Us</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-blue-400">Gallery</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-blue-400">Projects</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-blue-400">Contacts</a></li>
+                </ul>
+            </div>
+    
+            <!-- Fourth Column: Additional Info -->
+            <div>
+                <h3 class="font-bold mb-4">Additional Info</h3>
+                <ul class="space-y-2">
+                    <li><a href="#" class="text-gray-400 hover:text-blue-400">Become an Affiliate</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-blue-400">About Drone</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-blue-400">Community Meetups</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-blue-400">Why Buy With Us?</a></li>
+                </ul>
+            </div>
+    
+            <!-- Fifth Column: Navigation -->
+            <div>
+                <h3 class="font-bold mb-4">Navigation</h3>
+                <ul class="space-y-2">
+                    <li><a href="#" class="text-gray-400 hover:text-blue-400">Become an Affiliate</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-blue-400">About Drone</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-blue-400">Community Meetups</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-blue-400">Why Buy With Us?</a></li>
+                </ul>
+            </div>
+        </div>
+    
+        <div class="border-t border-gray-700 mt-8 pt-6">
+            <div class="container mx-auto text-center text-gray-500">
+                <p>Copyright &copy; 2024 &nbsp; <a href="#" class="text-gray-400 hover:text-blue-400">Nexospark</a></p>
+                
+            </div>
+        </div>
+    </footer>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    </footer>
+
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Show success message
+            document.getElementById('success-message').classList.remove('hidden');
+
+            // Simulate a delay and then redirect to the home page
+            setTimeout(function () {
+                window.location.href = 'index.html'; // Redirect to home page
+            }, 2000); // 2 seconds delay
+        });
+    </script>
+
+</body>
+
+</html>
