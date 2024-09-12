@@ -3,70 +3,535 @@
 
 <head>
     <meta charset="UTF-8">
+
+    <link rel="icon" type="image/png" href="images/white.png">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="NexoSpark is a leader in drone technology, manufacturing, and education. We design advanced UAVs for industrial and educational use, and offer comprehensive programs to ignite innovation and technological advancement.">
+    <meta name="description" content="Nexospark provides cutting-edge drone solutions to empower businesses and individuals. Explore our innovative approach.">
+    <meta name="keywords" content="Nexospark, innovative solutions, drone, manufacturing">
+    <title>Nexospark | Innovative Drone Solutions</title>
+    
+    <!-- Open Graph for Social Media Sharing -->
+    <meta property="og:title" content="Nexospark | Innovative Drone Solutions">
+    <meta property="og:description" content="Discover Nexospark's innovative solutions in [your industry]. Helping businesses and individuals grow.">
+    <meta property="og:image" content="https://nexospark.in/images/social-share-image.jpg">
+    <meta property="og:url" content="https://nexospark.in">
+    <meta property="og:type" content="nexospark.in">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Nexospark | Innovative Drone Solutions">
+    <meta name="twitter:description" content="Nexospark provides top-notch solutions in drone.">
+    <meta name="twitter:image" content="https://nexospark.in/images/twitter-card-image.jpg">
 
 
-    <title>NexoSpark | Drone Technology, Manufacturing, and Education</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Nexospark - Crafting the Future of Manufacturing and Education">
+    <title>Nexospark - Crafting the Future of Manufacturing and Education</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
 
-    <link rel="stylesheet" href="styles.css">
+        section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .dots-container {
+            position: fixed;
+            top: 50%;
+            left: 1rem;
+            transform: translateY(-50%);
+            z-index: 10;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #E5E7EB;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .dot.active {
+            background-color: #3B82F6;
+            transform: scale(1.5);
+        }
+
+        .scroll-down {
+            writing-mode: vertical-rl;
+            transform: rotate(180deg);
+            position: fixed;
+            bottom: 1rem;
+            left: 1rem;
+            letter-spacing: 0.1em;
+            color: #9CA3AF;
+            font-size: 0.875rem;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .hero-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .hero-image:hover {
+            transform: scale(1.05);
+        }
+
+        .product-image,
+        .service-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover .product-image,
+        .service-card:hover .service-image {
+            transform: scale(1.05);
+        }
+
+        .product-card,
+        .service-card {
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+        }
+
+        .product-card:hover,
+        .service-card:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .contact-info {
+            font-size: 0.875rem;
+            color: #E5E7EB;
+        }
+
+        .contact-info a {
+            color: #E5E7EB;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        .active-nav {
+            color: #3B82F6;
+            font-weight: 700;
+        }
+
+        .inactive-nav {
+            color: #6B7280;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            z-index: 20;
+            background-color: white;
+            border: 1px solid #ddd;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 4px;
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 8px 16px;
+            color: #333;
+            text-decoration: none;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: #f4f4f4;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+    margin-left: 15%;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: left;
+}
+
+.hero-content p {
+    font-size: 1rem;
+    font-weight: 300;
+    margin: 1.5rem 0;
+    text-align:left;
+    color: #aaa;
+}
+
+
+
+.mobile-message {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            z-index: 1000;
+            text-align: center;
+            padding-top: 40%;
+            font-size: 1.5rem;
+        }
+
+        .mobile-message button {
+            background-color: white;
+            color: black;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        
+
+    </style>
 </head>
 
-<body>
+<body class="bg-white">
 
-    <video autoplay muted loop class="video-background" id="bg-video">
-        <source src="9574-220321570.mp4" type="video/mp4" alt="NexoSpark advanced drone technology for industrial use">
-  
-        
-    </video>
-    <section class="hero-section">
-        <div class="background-shape"></div>
 
-        <!-- Logo -->
-        <div class="logo">
-            Nexospark
-        </div>
+    <!-- Header -->
+    <header class="flex justify-between items-center p-6 fixed w-full bg-white z-50 shadow-md">
+        <div class="text-2xl font-bold">Nexospark</div>
+        <nav class="space-x-6 text-sm font-medium">
+            <a href="#home" class="text-gray-600 hover:text-black">HOME</a>
+            <div class="relative inline-block text-left dropdown">
+                <a href="#" class="text-gray-600 hover:text-black">COURSES</a>
+                <div class="dropdown-menu">
+                    <a href="course.html">Basic</a>
+                    <a href="course.html">Certification</a>
+                    
+                </div>
+            </div>
+            <a href="#services" class="text-gray-600 hover:text-black">SERVICES</a>
+            <a href="#products" class="text-gray-600 hover:text-black">PRODUCTS</a>
+            <a href="aboutus.html" class="text-gray-600 hover:text-black">ABOUT US</a>
+        </nav>
+        <button class="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700"> <a href="contact-form.html">Contact Us</a></Contact></button>
+    </header>
+    
 
-        <!-- Hamburger Menu -->
-        <div class="menu">
-            <div class="line"></div>
-            <div class="line"></div>
-            <div class="line"></div>
-        </div>
+    <!-- Mobile View Message -->
+    <div id="mobileMessage" class="mobile-message">
+        <p>For the best experience, we recommend opening this website on a desktop or larger screen device.</p>
+        <button onclick="closeMessage()">Continue Anyway</button>
+    </div>
+    <!-- Dots Navigation -->
+    <div class="dots-container">
+        <div class="dot active" data-target="#home"></div>
+        <div class="dot" data-target="#who-are-we"></div>
+        <div class="dot" data-target="#our-vision"></div>
+        <div class="dot" data-target="#revolution"></div>
+        <div class="dot" data-target="#products"></div>
+        <div class="dot" data-target="#services"></div>
+    </div>
 
-        <!-- Hero Content -->
-        <div class="hero-content">
-            <h1>Future of Drone Technology</h1>
-            <p>Welcome to our world of endless imagination and boundless creativity.<br> Advanced UAV Solutions and Comprehensive Learning Programs.
+    <!-- Scroll Down -->
+    <div class="scroll-down">SCROLL DOWN</div>
 
-            </p>
-            <div class="hero-buttons">
-                <div class="btn btn-primary">launching</div>
-                <div class="btn btn-secondary">soon</div>
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center pt-20 bg-gray-50">
+        <div class="container mx-auto flex items-center justify-between py-12 px-6">
+            <div class="hero-content">
+                <h1 class="text-4xl font-bold leading-tight text-gray-900">Crafting the Future of Manufacturing and Education</h1>
+                <p class="text-gray-500 mt-4 mb-6">Join us on our journey as we continue to grow and shape the industries of tomorrow.</p>
+                <a href="#services" class="text-blue-600 font-semibold hover:underline">DISCOVER MORE &rarr;</a>
+            </div>
+            <div>
+                <img src="images/main-slider-01.png" alt="Nexospark Drone" class="hero-image">
             </div>
         </div>
+    </section>
 
-        <!-- Scroll Down -->
-       
-
-        <!-- Sidebar Text -->
-        <div class="sidebar-text">
-            HOMEPAGE
+    <!-- Who Are We Section -->
+     
+     <section id="who-are-we" class="min-h-screen flex items-center bg-gray-100">
+        <div class="container mx-auto  flex flex-col md:flex-row items-center px-6 py-12">
+            <!-- Content Section -->
+            <div class="who-are-we-content md:w-1/2">
+                <h2 class="text-3xl font-bold mb-6">Who Are We?</h2>
+                <p class="text-lg text-gray-700 mb-6">
+                    At NEXOSPARK, we're more than just a company - we're a vision, a mission, and a driving force in the world of technology and education. Founded on principles of innovation and excellence, we aim to revolutionize both manufacturing and educational sectors through our advanced technology and cutting-edge solutions.
+                </p>
+                <p class="text-lg text-gray-700 mb-6">
+                    Our team consists of industry experts, tech enthusiasts, and educational innovators, all working collaboratively to push boundaries and create transformative impacts. With a commitment to quality and a passion for progress, we are dedicated to shaping the future of technology and learning.
+                </p>
+                <p class="text-lg text-gray-700">
+                    We believe in the power of technology to enhance lives, create new opportunities, and drive societal advancement. Join us as we pave the way for a brighter, more connected future.
+                </p>
+            </div>
+            <!-- Drone Image Section -->
+            <div class="md:w-1/2 flex justify-center">
+                <img src="images/d-removebg-preview.png" alt="Animated Drone" class="drone-image" >
+            </div>
         </div>
     </section>
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Nexospark",
-  "url": "https://www.nexospark.in",
-  "logo": "https://www.nexospark.in/logo.png",
-  "sameAs": ["https://www.linkedin.com/company/nexospark", "https://twitter.com/nexospark"],
-  "description": "NexoSpark is a leader in drone technology, manufacturing, and education."
-}
-</script>
 
-    <script src="script.js"></script>
+    <!-- Our Vision Section -->
+    <section id="our-vision" class="min-h-screen flex items-center  justify-center bg-gray-50">
+        <div class="bg-blue-600 p-8 rounded-card text-center text-white container mx-auto px-6 py-12">
+            <h2 class="text-3xl font-bold mb-6">Our Vision</h2>
+            <blockquote class="text-2xl font-semibold italic text-gray-900 mb-6">
+                "PASSION UNLEASHED POTENTIAL REALISED."
+            </blockquote>
+            <p class="text-lg text-white-700 mb-6">
+                At Nexospark, our vision extends beyond mere technological advancement. We aspire to create an ecosystem where innovation meets education seamlessly, fostering growth and development on an unprecedented scale. By harnessing the potential of emerging technologies, we aim to address the challenges of today and anticipate the needs of tomorrow.
+            </p>
+            <p class="text-lg text-white-700 mb-6">
+                We strive to create products and services that not only solve current challenges but also pave the way for future developments. Through our commitment to research, development, and continuous improvement, we aim to inspire and empower individuals and organizations to reach their fullest potential.
+            </p>
+            <p class="text-lg text-white-700">
+                Our vision is to transform the way technology and education intersect, making a lasting impact on industries and communities around the globe.
+            </p>
+        </div>
+    </section>
+
+    <!-- Revolution Section -->
+   
+
+    <!-- Products Section -->
+   <!-- Products Section -->
+<section id="products" class="min-h-screen flex items-center justify-center bg-gray-50">
+    <div class="container mx-auto px-6 py-12">
+        <h2 class="text-3xl font-bold mb-6">Our Products</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Product 1 -->
+            <div class="product-card bg-white p-6 rounded-lg shadow-md transition-transform transform hover:scale-105">
+                <img src="images/zeus.jpeg" alt="Zeus Nex Zeus" class="product-image mb-4">
+                <h3 class="text-xl font-semibold mb-2">Zeus Nex Zeus</h3>
+                <p class="text-gray-600 mb-4">Unleash your drone's potential with our top-tier power system. Designed for enthusiasts and pros, it offers unmatched performance and mythical flair.</p>
+            </div>
+            <!-- Product 2 -->
+            <div class="product-card bg-white p-6 rounded-lg shadow-md transition-transform transform hover:scale-105">
+                <img src="images/venom.jpeg" alt="Venom 30a Nex Venom" class="product-image mb-4">
+                <h3 class="text-xl font-semibold mb-2">Venom 30a Nex Venom</h3>
+                <p class="text-gray-600 mb-4">Ultimate 4-in-1 ESC for high-performance drones. Delivering exceptional power and precision with robust construction and cutting-edge features.</p>
+            </div>
+            <!-- Product 3 -->
+            <div class="product-card bg-white p-6 rounded-lg shadow-md transition-transform transform hover:scale-105">
+                <img src="images/nex-gobli.jpeg" alt="Nex Goblin " class="product-image mb-4">
+                <h3 class="text-xl font-semibold mb-2">Nex Goblin </h3>
+                <p class="text-gray-600 mb-4">Electric motors and propellers to generate thrust for flight. It's typically powered by batteries, though some use fuel cells or gasoline engines for longer flight time.</p>
+            </div>
+            <!-- Product 4 -->
+            <div class="product-card bg-white p-6 rounded-lg shadow-md transition-transform transform hover:scale-105">
+                <img src="images/nexhornrt.jpeg" alt="Nex Hornet " class="product-image mb-4">
+                <h3 class="text-xl font-semibold mb-2">Nex Hornet </h3>
+                <p class="text-gray-600 mb-4">The Hornet is a micro-class FPV (First Person View) platform, designed for agile and immersive flying experiences.</p>
+            </div>
+           
+        </div>
+    </div>
+</section>
+
+
+    <!-- Services Section -->
+    <!-- Services Section -->
+<section id="services" class="min-h-screen flex items-center justify-center bg-gray-100 py-12">
+    <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold mb-6 text-center">Our Services</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Workshops -->
+            <div class="service-card bg-white p-6 rounded-lg shadow-md transition-transform transform hover:scale-105">
+                <img src="images/workshop.jpeg" alt="Workshops" class="service-image mb-4">
+                <h3 class="text-xl font-semibold mb-2">Workshops</h3>
+                <p class="text-gray-600">Interactive sessions led by industry experts, focusing on various aspects of drone technology such as assembly, flight programming, and advanced functionalities.</p>
+            </div>
+
+            <!-- Internships -->
+            <div class="service-card bg-white p-6 rounded-lg shadow-md transition-transform transform hover:scale-105">
+                <img src="images/internship.jpeg" alt="Internships" class="service-image mb-4">
+                <h3 class="text-xl font-semibold mb-2">Internships</h3>
+                <p class="text-gray-600">Hands-on opportunities for students and professionals to gain practical experience in drone technology and manufacturing, fostering real-world skills and industry connections.</p>
+            </div>
+
+            <!-- STEM Programs -->
+            <div class="service-card bg-white p-6 rounded-lg shadow-md transition-transform transform hover:scale-105">
+                <img src="images/stem.jpeg" alt="STEM Programs" class="service-image mb-4">
+                <h3 class="text-xl font-semibold mb-2">STEM Programs</h3>
+                <p class="text-gray-600">Specialized programs designed to ignite interest in science, technology, engineering, and mathematics (STEM) among students, integrating drone technology into engaging educational experiences.</p>
+            </div>
+
+            <!-- Curriculum Development -->
+            <div class="service-card bg-white p-6 rounded-lg shadow-md transition-transform transform hover:scale-105">
+                <img src="images/develop.jpeg" alt="Curriculum Development" class="service-image mb-4">
+                <h3 class="text-xl font-semibold mb-2">Curriculum Development</h3>
+                <p class="text-gray-600">Collaboration with educational institutions to develop comprehensive drone-related coursework, ranging from introductory to advanced levels, tailored to different educational needs.</p>
+            </div>
+
+            <!-- Training Programs -->
+            <div class="service-card bg-white p-6 rounded-lg shadow-md transition-transform transform hover:scale-105">
+                <img src="images/wrokkshop.jpeg" alt="Training Programs" class="service-image mb-4">
+                <h3 class="text-xl font-semibold mb-2">Training Programs</h3>
+                <p class="text-gray-600">Detailed training sessions covering a wide range of topics related to drones, including operational techniques, maintenance, and industry-specific applications.</p>
+            </div>
+
+            <!-- Custom Drone Solutions -->
+            <div class="service-card bg-white p-6 rounded-lg shadow-md transition-transform transform hover:scale-105">
+                <img src="images/custom.jpeg" alt="Custom Drone Solutions" class="service-image mb-4">
+                <h3 class="text-xl font-semibold mb-2">Custom Drone Solutions</h3>
+                <p class="text-gray-600">Tailored drone manufacturing services to meet specific industry needs, including agriculture, inspection, surveillance, and delivery, utilizing cutting-edge technology and precision engineering.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Footer -->
+    
+       <!-- Footer -->
+       <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-5 gap-8 px-6">
+            <!-- First Column: Address and Contact -->
+            <div>
+                <h3 class="font-bold mb-4">Useful Links</h3>
+                <p> Kottayam, Kerala , India-686634</p>
+                <p class="mt-2">+91 8078926635</p>
+                <p class="mt-2"><a href="mailto:info@quadron.co" class="text-blue-400">info@nexospark.in</a></p>
+                <div class="flex space-x-4 mt-4">
+                    <a href="#" class="text-gray-300 hover:text-blue-400"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-gray-300 hover:text-blue-400"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-gray-300 hover:text-blue-400"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+    
+            <!-- Second Column: Useful Links -->
+            <div>
+                <h3 class="font-bold mb-4">Useful Links</h3>
+                <ul class="space-y-2">
+                    <li><a href="#" class="text-gray-400 hover:text-blue-400">Documents</a></li>
+                    <li><a href="#products" class="text-gray-400 hover:text-blue-400">Products</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-blue-400">Nexospark Shop</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-blue-400">Blog and News</a></li>
+                </ul>
+            </div>
+    
+            <!-- Third Column: Main Menu -->
+            <div>
+                <h3 class="font-bold mb-4">Main Menu</h3>
+                <ul class="space-y-2">
+                    <li><a href="#" class="text-gray-400 hover:text-blue-400">About Us</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-blue-400">Gallery</a></li>
+                    <li><a href="#pro" class="text-gray-400 hover:text-blue-400">Projects</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-blue-400">Contacts</a></li>
+                </ul>
+            </div>
+    
+            <!-- Fourth Column: Additional Info -->
+            <div>
+                <h3 class="font-bold mb-4">Additional Info</h3>
+                <ul class="space-y-2">
+                    <li><a href="#" class="text-gray-400 hover:text-blue-400">Become an Affiliate</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-blue-400">About Drone</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-blue-400">Community Meetups</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-blue-400">Why Buy With Us?</a></li>
+                </ul>
+            </div>
+    
+            <!-- Fifth Column: Navigation -->
+            <div>
+                <h3 class="font-bold mb-4">Navigation</h3>
+                <ul class="space-y-2">
+                    <li><a href="#" class="text-gray-400 hover:text-blue-400">Become an Affiliate</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-blue-400">About Drone</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-blue-400">Community Meetups</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-blue-400">Why Buy With Us?</a></li>
+                </ul>
+            </div>
+        </div>
+    
+        <div class="border-t border-gray-700 mt-8 pt-6">
+            <div class="container mx-auto text-center text-gray-500">
+                <p>Copyright &copy; 2024 &nbsp; <a href="#" class="text-gray-400 hover:text-blue-400">Nexospark</a></p>
+                
+            </div>
+        </div>
+    </footer>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    </footer>
+
+    <script>
+
+function detectMobile() {
+            if (window.innerWidth < 768) { // Mobile devices have typically less than 768px screen width
+                document.getElementById('mobileMessage').style.display = 'block';
+            }
+        }
+
+        function closeMessage() {
+            document.getElementById('mobileMessage').style.display = 'none';
+        }
+
+        window.onload = detectMobile;
+
+
+        // JavaScript for scroll to section and dot activation
+        document.querySelectorAll('.dot').forEach(dot => {
+            dot.addEventListener('click', () => {
+                document.querySelector(dot.getAttribute('data-target')).scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        document.addEventListener('scroll', () => {
+            document.querySelectorAll('section').forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+                    document.querySelectorAll('.dot').forEach(dot => {
+                        dot.classList.toggle('active', dot.getAttribute('data-target') === `#${section.id}`);
+                    });
+
+                    // Update nav link active state
+                    document.querySelectorAll('nav a').forEach(link => {
+                        link.classList.toggle('active-nav', link.getAttribute('href') === `#${section.id}`);
+                        link.classList.toggle('inactive-nav', link.getAttribute('href') !== `#${section.id}`);
+                    });
+                }
+            });
+        });
+    </script>
+
 </body>
 
 </html>
